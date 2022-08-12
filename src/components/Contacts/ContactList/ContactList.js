@@ -8,4 +8,4 @@ const ContactList = () => {
     )
 };
 
-export { ContactList }
+export default ContactList;

@@ -8,4 +8,4 @@ const AddContact = () => {
     )
 };
 
-export { AddContact }
+export default AddContact;
