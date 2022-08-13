@@ -39,11 +39,27 @@ const ContactList = () => {
                 <div className='container'>
                     <div className='row'>
                         <div className='col-md-4'>
-                        <div className='card'>
-                            <div className='card-body'>
-
+                            <div className='card'>
+                                <div className='card-body'>
+                                    <div className='row'>
+                                        <div className='col-11'>
+                                            <ul className='list-group'>
+                                                <li className='list-group-item list-group-item-action'>
+                                                    Name : <span className='fw-bold'>Ankys Serrano</span>
+                                                </li>
+                                                <li className='list-group-item list-group-item-action'>
+                                                    Email : <span className='fw-bold'>serranoankys@gmail.com</span>
+                                                </li>
+                                                <li className='list-group-item list-group-item-action'>
+                                                    Mobile : <span className='fw-bold'>42999091697</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div className='col-1'>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
                         </div>
                     </div>
                 </div>
