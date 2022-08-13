@@ -10,7 +10,7 @@ const ContactList = () => {
                         <div className="row">
                             <div className='col'>
                                 <p className='h3'>Contatos 
-                                <Link to={'/contacts/add'} className='btn btn-success ms-2'>  New </Link>
+                                <Link to={'/contacts/add'} className='btn btn-success ms-2'><i className='fa fa-square-plus me-2'/>New</Link>
                                 </p>
                             </div>
                         </div>
