@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ContactList = () => {
     return (
@@ -9,25 +9,27 @@ const ContactList = () => {
                     <div className='grid'>
                         <div className="row">
                             <div className='col'>
-                                <p className='h3'>Contacts Gabyzda 
-                                <Link to={'/contacts/add'} className='btn btn-success ms-2'><i className='fa fa-square-plus me-2'/>New</Link>
+                                <p className='h3'>Contacts Gabyzda
+                                    <Link to={'/contacts/add'} className='btn btn-success ms-2'><i className='fa fa-square-plus me-2' />New</Link>
                                 </p>
                                 <p className='fst-italic'>Bienvenidos a mi Agenda de Contactos para uso exclusivo en TOTI. Aquí encontramos la Turma 16, maravillosos, competentes y bondadosos compañeros, cabe destacar que nuestro Amado Coordinador José Augusto Dalmonte, quien nos acompaña y orienta capazmente se encuentra registrado también. Soy feliz de ser TOTER!!!</p>
                             </div>
                         </div>
                         <div className='row'>
                             <div className='col-md-6'>
-                                <form>
-                                    <div className='mb-2'>
-                                        <input type='text' className="form-control" placeholder="Search Contacts"/>
+                                <form className='row'>
+                                    <div className='col'>
+                                        <div className='mb-2'>
+                                            <input type='text' className="form-control" placeholder="Search Contacts" />
+                                        </div>
                                     </div>
-                                    <div className='mb-2'>
-                                        <input type='submit' className="btn btn-outline-dark" value="Search"/>
+                                    <div className='col'>
+                                        <div className='mb-2'>
+                                            <input type='submit' className="btn btn-outline-dark" value="Search" />
+                                        </div>
                                     </div>
                                 </form>
-
                             </div>
-
                         </div>
                     </div>
                 </div>
