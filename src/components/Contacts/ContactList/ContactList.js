@@ -34,6 +34,20 @@ const ContactList = () => {
                     </div>
                 </div>
             </section>
+
+            <section className='contact-ist'>
+                <div className='container'>
+                    <div className='row'>
+                        <div className='col-md-4'>
+                        <div className='card'>
+                            <div className='card-body'>
+
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </>
     )
 };
