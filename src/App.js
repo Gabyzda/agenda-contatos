@@ -10,6 +10,9 @@ const App = () => {
     <Routes>
       <Route path={'/'} element={<Navigate to={'/contacts/list'}/>}/>
       <Route path={'/contacts/list'} element={<ContactList/>} />
+      <Route path={'/contacts/add'} element={<AddContact/>} />
+      <Route path={'/contacts/view/:contactId'} element={<ViewContact/>} />
+      <Route path={'/contacts/edit/:contactId'} element={<EditContact/>} />
     </Routes>
 
     </>
