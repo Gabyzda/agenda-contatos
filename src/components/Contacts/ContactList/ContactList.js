@@ -4,6 +4,9 @@ const ContactList = () => {
     return (
         <>
             <section className='contact-search'>
+                <div className='container'>
+
+                </div>
 
             </section>
         </>
