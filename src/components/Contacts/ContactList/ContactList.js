@@ -9,15 +9,14 @@ const ContactList = () => {
                     <div className='grid'>
                         <div className="row">
                             <div className='col'>
-                                <p className='h3'>Agenda de Contatos
-                                <Link to={'/contacts/add'}></Link>
+                                <p className='h3'>Contatos 
+                                <Link to={'/contacts/add'} className='btn btn-success ms-2'>  New </Link>
                                 </p>
                             </div>
                         </div>
 
                     </div>
                 </div>
-
             </section>
         </>
     )
