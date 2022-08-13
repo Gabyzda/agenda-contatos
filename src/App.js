@@ -2,6 +2,10 @@ import React from "react";
 import './App.css';
 import {Routes , Route, Navigate} from 'react-router-dom';
 import NavBar from "./components/NavBar/NavBar";
+import ContactList from "./components/Contacts/ContactList/ContactList";
+import AddContact from "./components/Contacts/AddContact/AddContact";
+import ViewContact from "./components/Contacts/ViewContact/ViewContact";
+import EditContact from "./components/Contacts/EditContact/EditContact";
 
 const App = () => {
   return (

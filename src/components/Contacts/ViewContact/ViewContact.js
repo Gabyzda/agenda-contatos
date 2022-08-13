@@ -8,4 +8,4 @@ const ViewContact = () => {
     )
 };
 
-export { ViewContact }
+export default ViewContact;
