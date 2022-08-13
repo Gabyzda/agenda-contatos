@@ -15,7 +15,18 @@ const ContactList = () => {
                                 <p className='fst-italic'>Bienvenidos a mi Agenda de Contactos para uso exclusivo en TOTI. Aquí encontramos la Turma 16, maravillosos, competentes y bondadosos compañeros, cabe destacar que nuestro Amado Coordinador quien nos acompaña y orienta capazmente se encuentra registrado también. Soy feliz de ser TOTER!!!</p>
                             </div>
                         </div>
+                        <div className='row'>
+                            <div className='col-md-6'>
+                                <form>
+                                    <div className='mb-2'>
+                                        <input type='text' className="form-control" placeholder="Search Contacts"/>
 
+                                    </div>
+                                </form>
+
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </section>
