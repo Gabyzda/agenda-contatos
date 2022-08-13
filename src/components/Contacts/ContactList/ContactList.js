@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 const ContactList = () => {
     return (
@@ -8,7 +9,9 @@ const ContactList = () => {
                     <div className='grid'>
                         <div className="row">
                             <div className='col'>
-                                
+                                <p className='h3'>Agenda de Contatos
+                                <Link to={'/contacts/add'}></Link>
+                                </p>
                             </div>
                         </div>
 
