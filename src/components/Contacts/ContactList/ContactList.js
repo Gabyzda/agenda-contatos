@@ -3,7 +3,9 @@ import React from 'react';
 const ContactList = () => {
     return (
         <>
-            <h2>ContactList</h2>
+            <section className='contact-search'>
+
+            </section>
         </>
     )
 };
