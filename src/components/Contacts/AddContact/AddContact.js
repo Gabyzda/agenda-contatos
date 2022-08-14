@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AddContact = () => {
     return (
@@ -15,14 +16,19 @@ const AddContact = () => {
                         <div className='col-md-4'>
                             <form>
                                 <div className='mb-2'>
-                                    <input type="text" className='form-control' placeholder='Name'/>
+                                    <input type="text" className='form-control' placeholder='Name' />
                                 </div>
                                 <div className='mb-2'>
-                                    <input type="email" className='form-control' placeholder='Email'/>
+                                    <input type="email" className='form-control' placeholder='Email' />
                                 </div>
                                 <div className='mb-2'>
-                                    <input type="number" className='form-control' placeholder='Mobile'/>
+                                    <input type="number" className='form-control' placeholder='Mobile' />
                                 </div>
+                                <div className='mb-2'>
+                                    <input type='submit' className='btn btn-success' value='Create'/>
+                                    <Link to={'/contacts/list'} className='btn btn-dark ms-2'>Close</Link>
+                                </div>
+
                             </form>
 
                         </div>
