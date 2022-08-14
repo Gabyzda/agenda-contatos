@@ -14,7 +14,15 @@ const AddContact = () => {
                     <div className='row'>
                         <div className='col-md-4'>
                             <form>
-                                
+                                <div className='mb-2'>
+                                    <input type="text" className='form-control' placeholder='Name'/>
+                                </div>
+                                <div className='mb-2'>
+                                    <input type="email" className='form-control' placeholder='Email'/>
+                                </div>
+                                <div className='mb-2'>
+                                    <input type="number" className='form-control' placeholder='Mobile'/>
+                                </div>
                             </form>
 
                         </div>
