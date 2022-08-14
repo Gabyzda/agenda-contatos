@@ -6,11 +6,9 @@ const ViewContact = () => {
         <>
             <section className='add-contact p-3'>
                 <div className='container'>
-                <div className='row'>
-                        <div className='col'>
-                            <p className='h4 text-success fw-bold'>View Contact</p>
-                            <p className='fst-italic'>Podremos ver nuestros contactos de TOTI aquí, Así es el detalle de mi Agenda de Contactos TOTER!!!</p>
-                        </div>
+                    <div className='col'>
+                        <p className='h4 text-success fw-bold'>View Contact</p>
+                        <p className='fst-italic'>Podremos ver nuestros contactos de TOTI aquí, Así es el detalle de mi Agenda de Contactos TOTER!!!</p>
                     </div>
                     <div className='col-md-4' >
                         <div className='card'>
