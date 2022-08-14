@@ -28,14 +28,10 @@ const EditContact = () => {
                                     <input type='submit' className='btn btn-success' value='Update'/>
                                     <Link to={'/contacts/list'} className='btn btn-dark ms-2'>Cancel</Link>
                                 </div>
-
                             </form>
-
                         </div>
-
                     </div>
                 </div>
-
             </section>
         </>
     )
