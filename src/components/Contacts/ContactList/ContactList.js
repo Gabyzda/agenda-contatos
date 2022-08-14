@@ -41,7 +41,7 @@ const ContactList = () => {
                         <div className='col-md-4'>
                             <div className='card'>
                                 <div className='card-body'>
-                                    <div className='row align-items-center'>
+                                    <div className='row align-items-center d-flex justify-content-around'>
                                         <div className='col-md-10 d-flex flex-row'>
                                             <ul className='list-group'>
                                                 <li className='list-group-item list-group-item-action'>
@@ -56,11 +56,11 @@ const ContactList = () => {
                                             </ul>
                                         </div>
                                         <div className='col-md-2 d-flex flex-column align-items-center'>
-                                            <Link to={'/contacts/edit/:contactId'} className='btn btn-warning my-1'>
-                                                <i className='fa fa-pen-to-square' />
+                                            <Link to={'/contacts/edit/:contactId'} className='btn btn-success my-1'>
+                                                <i className='fa fa-user-pen'/>
                                             </Link>
                                             <button className='btn btn-danger my-1'>
-                                                <i className='fa fa-trash-can' />
+                                                <i className='fa fa-trash-can'/>
                                             </button>
                                         </div>
                                     </div>
