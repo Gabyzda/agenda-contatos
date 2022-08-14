@@ -42,7 +42,7 @@ const ContactList = () => {
                             <div className='card'>
                                 <div className='card-body'>
                                     <div className='row'>
-                                        <div className='col-11'>
+                                        <div className='col-md-11'>
                                             <ul className='list-group'>
                                                 <li className='list-group-item list-group-item-action'>
                                                     Name : <span className='fw-bold'>Ankys Serrano</span>
@@ -55,7 +55,13 @@ const ContactList = () => {
                                                 </li>
                                             </ul>
                                         </div>
-                                        <div className='col-1'>
+                                        <div className='col-md-1'>
+                                            <Link to={'/contacts/edit/:contactId'} className='btn btn-warning'>
+                                                <i className='fa fa-pen-to-square' />
+                                            </Link>
+                                            <button className='btn btn-danger'>
+                                                <i className='fa fa-trash-can' />
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
