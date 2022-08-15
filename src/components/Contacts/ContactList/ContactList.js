@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 
 const ContactList = () => {
+
+    const [state , setState] = useState(initialState: {
+        loading : false,
+        contatos : [],
+        errorMessage : ''
+    });
+    
     return (
         <>
             <section className='contact-search p-3'>
