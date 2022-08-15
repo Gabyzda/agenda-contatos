@@ -7,6 +7,16 @@ const AddContact = () => {
     const [email, setEmail] = useState('');
     const [mobile, setMobile] = useState('');
 
+    const handleSubmit = async () => {
+        const response = await fetch('http://localhost:4000/contatos/', {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {"Content-type": "application/json; charset=UTF-8"}
+        });
+        if (response.ok)
+        console.log("OKS" , response.ok);
+    }
+
     return (
         <>
             <section className='add-contact p-3'>
@@ -19,7 +29,7 @@ const AddContact = () => {
                     </div>
                     <div className='row'>
                         <div className='col-md-4'>
-                            <form >
+                            <form onSubmit={handleSubmit} >
                                 <div className='mb-2'>
                                     <input
                                         type="text"
