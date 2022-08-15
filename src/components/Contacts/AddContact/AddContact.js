@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
 
 const AddContact = () => {
+
+    const [name , setName] = useState('');
+    const [email , setEmail] = useState('');
+    const [mobile , setMobile] = useState('');
+
     return (
         <>
             <section className='add-contact p-3'>
@@ -14,15 +19,15 @@ const AddContact = () => {
                     </div>
                     <div className='row'>
                         <div className='col-md-4'>
-                            <form onSubmit={}>
+                            <form >
                                 <div className='mb-2'>
-                                    <input type="text" className='form-control' placeholder='Name' />
+                                    <input type="text" className='form-control' placeholder='Name' value={name}/>
                                 </div>
                                 <div className='mb-2'>
-                                    <input type="email" className='form-control' placeholder='Email' />
+                                    <input type="email" className='form-control' placeholder='Email' value={email}/>
                                 </div>
                                 <div className='mb-2'>
-                                    <input type="number" className='form-control' placeholder='Mobile' />
+                                    <input type="number" className='form-control' placeholder='Mobile' value={mobile}/>
                                 </div>
                                 <div className='mb-2'>
                                     <input type='submit' className='btn btn-success' value='Create'/>
