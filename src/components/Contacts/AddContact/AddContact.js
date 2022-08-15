@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const AddContact = () => {
 
-    const [name , setName] = useState('');
-    const [email , setEmail] = useState('');
-    const [mobile , setMobile] = useState('');
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [mobile, setMobile] = useState('');
 
     return (
         <>
@@ -21,16 +21,34 @@ const AddContact = () => {
                         <div className='col-md-4'>
                             <form >
                                 <div className='mb-2'>
-                                    <input type="text" className='form-control' placeholder='Name' value={name}/>
+                                    <input
+                                        type="text"
+                                        className='form-control'
+                                        placeholder='Name'
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
+                                    />
                                 </div>
                                 <div className='mb-2'>
-                                    <input type="email" className='form-control' placeholder='Email' value={email}/>
+                                    <input
+                                        type="email"
+                                        className='form-control'
+                                        placeholder='Email'
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                    />
                                 </div>
                                 <div className='mb-2'>
-                                    <input type="number" className='form-control' placeholder='Mobile' value={mobile}/>
+                                    <input
+                                        type="number"
+                                        className='form-control'
+                                        placeholder='Mobile'
+                                        value={mobile}
+                                        onChange={(e) => setMobile(e.target.value)}
+                                    />
                                 </div>
                                 <div className='mb-2'>
-                                    <input type='submit' className='btn btn-success' value='Create'/>
+                                    <input type='submit' className='btn btn-success' value='Create' />
                                     <Link to={'/contacts/list'} className='btn btn-dark ms-2'>Cancel</Link>
                                 </div>
                             </form>
