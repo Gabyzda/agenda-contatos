@@ -45,7 +45,7 @@ const ContactList = () => {
                                 <div className='card-body'>
                                     <div className='row align-items-center d-flex justify-content-around'>
                                         <div className='col-md-6 d-flex flex-row align-items-center'>
-                                            <span className='fw-bold'>Ankys Serrano</span>
+                                            <span className='fw-bold'>Nombre de contacto</span>
                                         </div>
                                         <div className='col-md-6 d-flex flex-row align-items-center'>
                                             <Link to={'/contacts/view/:contactId'} className='btn btn-warning ms-1'>
