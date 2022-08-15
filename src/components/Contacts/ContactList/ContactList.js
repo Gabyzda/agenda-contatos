@@ -8,7 +8,7 @@ const ContactList = () => {
         contatos : [],
         errorMessage : ''
     });
-    
+
     return (
         <>
             <section className='contact-search p-3'>
