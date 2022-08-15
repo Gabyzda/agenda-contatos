@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
-import { ContactService } from '../../../services/ContactService';
+// import { ContactService } from '../../../services/ContactService';
 
-function ContactList () {
-
-    
+const ContactList = () => {
 
     return (
         <>

@@ -14,7 +14,7 @@ const AddContact = () => {
                     </div>
                     <div className='row'>
                         <div className='col-md-4'>
-                            <form>
+                            <form onSubmit={}>
                                 <div className='mb-2'>
                                     <input type="text" className='form-control' placeholder='Name' />
                                 </div>
