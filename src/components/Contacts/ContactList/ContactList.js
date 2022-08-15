@@ -1,9 +1,41 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 // import { ContactService } from '../../../services/ContactService';
 
 const ContactList = () => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [mobile, setMobile] = useState('');
 
+    const [contactList, setContactList] = useState();
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        const data = {
+            "name": name,
+            "email": email,
+            "mobile": mobile,
+        }
+        console.log("data", data);
+        const response = await fetch('http://localhost:4000/contatos/', {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: { "Content-type": "application/json; charset=UTF-8" }
+        });
+        if (response.ok)
+            console.log("OKS", response.ok);
+        else
+            console.log("ERRO");
+    }
+
+    useEffect(() => {
+        fetch('http://localhost:4000/contatos')
+            .then((response) => response.json())
+            .then(data => setContactList(data));
+    }, []);
+    console.log("LISTA DE CONTATOS", contactList);
     return (
         <>
             <section className='contact-search p-3'>
@@ -42,24 +74,32 @@ const ContactList = () => {
                     <div className='row'>
                         <div className='col-md-4'>
                             <div className='card'>
-                                <div className='card-body'>
-                                    <div className='row align-items-center d-flex justify-content-around'>
-                                        <div className='col-md-6 d-flex flex-row align-items-center'>
-                                            <span className='fw-bold'>Nombre de contacto</span>
+                                {contactList.map((contact) => {
+                                    return (
+                                        <div className='card-body'>
+                                            <div className='row align-items-center d-flex justify-content-around'>
+                                                <div className='col-md-6 d-flex flex-row align-items-center'>
+                                                    <span className='fw-bold'>
+                                                        {contact.name}
+                                                    </span>
+                                                </div>
+                                                <div className='col-md-6 d-flex flex-row align-items-center'>
+                                                    <Link to={'/contacts/view/:contactId'} className='btn btn-warning ms-1'>
+                                                        <i className='fa fa-address-card' />
+                                                    </Link>
+                                                    <Link to={'/contacts/edit/:contactId'} className='btn btn-success ms-1'>
+                                                        <i className='fa fa-user-pen' />
+                                                    </Link>
+                                                    <button className='btn btn-danger ms-1'>
+                                                        <i className='fa fa-trash-can' />
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div className='col-md-6 d-flex flex-row align-items-center'>
-                                            <Link to={'/contacts/view/:contactId'} className='btn btn-warning ms-1'>
-                                                <i className='fa fa-address-card' />
-                                            </Link>
-                                            <Link to={'/contacts/edit/:contactId'} className='btn btn-success ms-1'>
-                                                <i className='fa fa-user-pen' />
-                                            </Link>
-                                            <button className='btn btn-danger ms-1'>
-                                                <i className='fa fa-trash-can' />
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
+                                    )
+
+                                })}
+
                             </div>
                         </div>
                     </div>

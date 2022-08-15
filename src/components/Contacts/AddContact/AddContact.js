@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const AddContact = () => {
@@ -6,8 +6,7 @@ const AddContact = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [mobile, setMobile] = useState('');
-    const [contactList, setContactList] = useState ();
-
+    
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -27,13 +26,6 @@ const AddContact = () => {
         else
             console.log("ERRO");
     }
-
-    useEffect(() => {
-        fetch('http://localhost:4000/contatos')
-            .then((response) => response.json())
-            .then(data => setContactList(data));
-    }, []);
-console.log("LISTA DE CONTATOS", contactList);
     return (
         <>
             <section className='add-contact p-3'>
@@ -79,13 +71,7 @@ console.log("LISTA DE CONTATOS", contactList);
                                     <Link to={'/contacts/list'} className='btn btn-dark ms-2'>Cancel</Link>
                                 </div>
                             </form>
-                            <div>
-                                <ul>
-                                    <li>
-                                        Nombre de contacto
-                                    </li>
-                                </ul>
-                            </div>
+                           
 
                         </div>
                     </div>
