@@ -1,13 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
+import { ContactService } from '../../../services/ContactService';
 
-const ContactList = () => {
+function ContactList () {
 
-    const [state , setState] = useState(initialState: {
-        loading : false,
-        contatos : [],
-        errorMessage : ''
-    });
+    
 
     return (
         <>
@@ -50,7 +47,7 @@ const ContactList = () => {
                                 <div className='card-body'>
                                     <div className='row align-items-center d-flex justify-content-around'>
                                         <div className='col-md-6 d-flex flex-row align-items-center'>
-                                           <span className='fw-bold'>Ankys Serrano</span>
+                                            <span className='fw-bold'>Ankys Serrano</span>
                                         </div>
                                         <div className='col-md-6 d-flex flex-row align-items-center'>
                                             <Link to={'/contacts/view/:contactId'} className='btn btn-warning ms-1'>

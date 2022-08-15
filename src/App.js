@@ -7,7 +7,7 @@ import AddContact from "./components/Contacts/AddContact/AddContact";
 import ViewContact from "./components/Contacts/ViewContact/ViewContact";
 import EditContact from "./components/Contacts/EditContact/EditContact";
 
-const App = () => {
+function App ()  {
   return (
     <>
     <NavBar/>
