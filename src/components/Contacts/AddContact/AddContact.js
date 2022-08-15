@@ -23,6 +23,8 @@ const AddContact = () => {
         });
         if (response.ok)
             console.log("OKS", response.ok);
+            else
+            console.log("ERRO");
     }
 
     return (
