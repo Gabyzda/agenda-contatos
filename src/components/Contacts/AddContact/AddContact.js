@@ -7,14 +7,22 @@ const AddContact = () => {
     const [email, setEmail] = useState('');
     const [mobile, setMobile] = useState('');
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        const data = {
+            "name": name,
+            "email": email,
+            "mobile": mobile,
+        }
+        console.log("data", data);
         const response = await fetch('http://localhost:4000/contatos/', {
             method: 'POST',
             body: JSON.stringify(data),
-            headers: {"Content-type": "application/json; charset=UTF-8"}
+            headers: { "Content-type": "application/json; charset=UTF-8" }
         });
         if (response.ok)
-        console.log("OKS" , response.ok);
+            console.log("OKS", response.ok);
     }
 
     return (
