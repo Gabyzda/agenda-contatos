@@ -1,9 +1,19 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+// import axios from 'axios';
 import { useState, useEffect } from "react";
 // import { ContactService } from '../../../services/ContactService';
 
 const ContactList = () => {
+
+    const [listContact, setListContact] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:4000/contatos')
+            .then((response) => response.json())
+            .then(data => setListContact(data))
+    }, []);
+    console.log("LISTA DE CONTACTOS", listContact);
     return (
         <>
             <section className='contact-search p-3'>
@@ -40,29 +50,37 @@ const ContactList = () => {
             <section className='contact-list'>
                 <div className='container'>
                     <div className='row'>
-                        <div className='col-md-4'>
-                            <div className='card'>
-                                <div className='card-body'>
-                                    <div className='row align-items-center d-flex justify-content-around'>
-                                        <div className='col-md-6 d-flex flex-row align-items-center'>
-                                            <span className='fw-bold'>
-                                                nombre
-                                            </span>
+                        <div className='row col-md-4'>
+                            {listContact?.map((contact) => {
+                                return (
+                                    <div className='card'>
+
+                                        <div className='card-body'>
+
+                                            <div className='row align-items-center d-flex justify-content-around'>
+                                                <div className='col-md-6 d-flex flex-row align-items-center'>
+                                                    <span className='fw-bold'>
+                                                        {contact.name}
+                                                    </span>
+                                                </div>
+                                                <div className='col-md-6 d-flex flex-row align-items-center'>
+                                                    <Link to={'/contacts/view/:contactId'} className='btn btn-warning ms-1'>
+                                                        <i className='fa fa-address-card' />
+                                                    </Link>
+                                                    <Link to={'/contacts/edit/:contactId'} className='btn btn-success ms-1'>
+                                                        <i className='fa fa-user-pen' />
+                                                    </Link>
+                                                    <button className='btn btn-danger ms-1'>
+                                                        <i className='fa fa-trash-can' />
+                                                    </button>
+                                                </div>
+                                            </div>
+
                                         </div>
-                                        <div className='col-md-6 d-flex flex-row align-items-center'>
-                                            <Link to={'/contacts/view/:contactId'} className='btn btn-warning ms-1'>
-                                                <i className='fa fa-address-card' />
-                                            </Link>
-                                            <Link to={'/contacts/edit/:contactId'} className='btn btn-success ms-1'>
-                                                <i className='fa fa-user-pen' />
-                                            </Link>
-                                            <button className='btn btn-danger ms-1'>
-                                                <i className='fa fa-trash-can' />
-                                            </button>
-                                        </div>
+
                                     </div>
-                                </div>
-                            </div>
+                                )
+                            })}
                         </div>
                     </div>
                 </div>
