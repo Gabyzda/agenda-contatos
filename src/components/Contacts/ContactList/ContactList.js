@@ -5,15 +5,30 @@ import { useState, useEffect } from "react";
 // import { ContactService } from '../../../services/ContactService';
 
 const ContactList = () => {
-
     const [listContact, setListContact] = useState([]);
 
-    useEffect(() => {
+    function getAllContacts() {
         fetch('http://localhost:4000/contatos')
             .then((response) => response.json())
-            .then(data => setListContact(data))
+            .then(data => setListContact(data));
+    };
+
+    useEffect(() => {
+        getAllContacts();
     }, []);
+
     console.log("LISTA DE CONTACTOS", listContact);
+
+    const handDelete = async (contactId) => {
+        const response = await fetch('http://localhost:4000/contatos/' + contactId, {
+            method: 'DELETE',
+        })
+        if (response.ok) {
+            alert("successfully deleted");
+            getAllContacts ();
+        }
+    }
+
     return (
         <>
             <section className='contact-search p-3'>
@@ -53,10 +68,8 @@ const ContactList = () => {
                         <div className='col-md-4 my-1'>
                             {listContact?.map((contact) => {
                                 return (
-                                    <div className='card my-1'>
-
+                                    <div key={contact.id} className='card my-1'>
                                         <div className='card-body'>
-
                                             <div className='row align-items-center d-flex-row justify-content-around'>
                                                 <div className='col-md-6 d-flex flex-row align-items-center'>
                                                     <span className='fw-bold'>
@@ -70,7 +83,7 @@ const ContactList = () => {
                                                     <Link to={'/contacts/edit/:contactId'} className='btn btn-success ms-1'>
                                                         <i className='fa fa-user-pen' />
                                                     </Link>
-                                                    <button className='btn btn-danger ms-1'>
+                                                    <button onClick={() => handDelete(contact.id)} className='btn btn-danger ms-1'>
                                                         <i className='fa fa-trash-can' />
                                                     </button>
                                                 </div>
