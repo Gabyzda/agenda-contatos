@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from "react-router-dom";
 // import axios from 'axios';
 import { useState, useEffect } from "react";
+// import Button from 'react-bootstrap/Button';
+// import Modal from 'react-bootstrap/Modal';
 // import { ContactService } from '../../../services/ContactService';
 
 const ContactList = () => {
@@ -108,7 +110,7 @@ const ContactList = () => {
                         </div>
                     </div>
                 </div>
-                <div>
+                {/* <div>
                     {
                         showModal &&
                         <div className=''>
@@ -116,6 +118,26 @@ const ContactList = () => {
                             <button onClick={handDelete}>Confirm</button>
                             <button onClick={handCancel}>Cancel</button>
                         </div>
+                    }
+                </div> */}
+                <div>
+                    {
+                        showModal &&
+                        <div>
+                            <header closeButton>
+                                <title>Alert!</title>
+                            </header>
+
+                            <body>
+                                <p>Are you sure you want to delete?</p>
+                            </body>
+
+                            <footer>
+                                <button variant="secondary" onClick={handCancel}>Cancel</button>
+                                <button variant="primary" onClick={handDelete}>Confirm</button>
+                            </footer>
+                        </div>
+
                     }
                 </div>
             </section>
