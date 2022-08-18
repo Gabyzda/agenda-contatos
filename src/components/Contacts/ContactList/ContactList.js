@@ -29,12 +29,19 @@ const ContactList = () => {
             alert("successfully deleted");
             getAllContacts();
         }
+        setShowModal(false);
     }
 
     const onDelete = (contactId) => {
         setContactToDelete(contactId);
         setShowModal(true);
     }
+
+    const handCancel = () => {
+        setContactToDelete('');
+        setShowModal(false);
+    }
+
     return (
         <>
             <section className='contact-search p-3'>
@@ -107,7 +114,7 @@ const ContactList = () => {
                         <div className=''>
                             <h3>Are you sure you want to delete?</h3>
                             <button onClick={handDelete}>Confirm</button>
-                            <button onClick={() => setShowModal(false)}>Cancel</button>
+                            <button onClick={handCancel}>Cancel</button>
                         </div>
                     }
                 </div>
