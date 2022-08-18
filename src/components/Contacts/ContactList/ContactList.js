@@ -50,14 +50,14 @@ const ContactList = () => {
             <section className='contact-list'>
                 <div className='container'>
                     <div className='row'>
-                        <div className='row col-md-4'>
+                        <div className='col-md-4 my-1'>
                             {listContact?.map((contact) => {
                                 return (
-                                    <div className='card'>
+                                    <div className='card my-1'>
 
                                         <div className='card-body'>
 
-                                            <div className='row align-items-center d-flex justify-content-around'>
+                                            <div className='row align-items-center d-flex-row justify-content-around'>
                                                 <div className='col-md-6 d-flex flex-row align-items-center'>
                                                     <span className='fw-bold'>
                                                         {contact.name}
