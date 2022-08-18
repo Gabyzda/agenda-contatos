@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 // import { ContactService } from '../../../services/ContactService';
 
 const ContactList = () => {
+    const [showModal, setShowModal] = useState(false);
+    const [contactTodelete, setContactToDelete] = useState();
     const [listContact, setListContact] = useState([]);
 
     function getAllContacts() {
@@ -19,16 +21,20 @@ const ContactList = () => {
 
     console.log("LISTA DE CONTACTOS", listContact);
 
-    const handDelete = async (contactId) => {
-        const response = await fetch('http://localhost:4000/contatos/' + contactId, {
+    const handDelete = async () => {
+        const response = await fetch('http://localhost:4000/contatos/' + contactTodelete, {
             method: 'DELETE',
         })
         if (response.ok) {
             alert("successfully deleted");
-            getAllContacts ();
+            getAllContacts();
         }
     }
 
+    const onDelete = (contactId) => {
+        setContactToDelete(contactId);
+        setShowModal(true);
+    }
     return (
         <>
             <section className='contact-search p-3'>
@@ -83,19 +89,27 @@ const ContactList = () => {
                                                     <Link to={'/contacts/edit/:contactId'} className='btn btn-success ms-1'>
                                                         <i className='fa fa-user-pen' />
                                                     </Link>
-                                                    <button onClick={() => handDelete(contact.id)} className='btn btn-danger ms-1'>
+                                                    <button onClick={() => onDelete(contact.id)} className='btn btn-danger ms-1'>
                                                         <i className='fa fa-trash-can' />
                                                     </button>
                                                 </div>
                                             </div>
-
                                         </div>
-
                                     </div>
                                 )
                             })}
                         </div>
                     </div>
+                </div>
+                <div>
+                    {
+                        showModal &&
+                        <div className=''>
+                            <h3>Are you sure you want to delete?</h3>
+                            <button onClick={handDelete}>Confirm</button>
+                            <button onClick={() => setShowModal(false)}>Cancel</button>
+                        </div>
+                    }
                 </div>
             </section>
         </>
