@@ -2,9 +2,6 @@ import React from 'react';
 import { Link } from "react-router-dom";
 // import axios from 'axios';
 import { useState, useEffect } from "react";
-// import Button from 'react-bootstrap/Button';
-// import Modal from 'react-bootstrap/Modal';
-// import { ContactService } from '../../../services/ContactService';
 
 const ContactList = () => {
     const [showModal, setShowModal] = useState(false);
@@ -21,8 +18,7 @@ const ContactList = () => {
         getAllContacts();
     }, []);
 
-    console.log("LISTA DE CONTACTOS", listContact);
-
+    
     const handDelete = async () => {
         const response = await fetch('http://localhost:4000/contatos/' + contactTodelete, {
             method: 'DELETE',
@@ -110,7 +106,7 @@ const ContactList = () => {
                         </div>
                     </div>
                 </div>
-                {/* <div>
+                <div>
                     {
                         showModal &&
                         <div className=''>
@@ -119,8 +115,8 @@ const ContactList = () => {
                             <button onClick={handCancel}>Cancel</button>
                         </div>
                     }
-                </div> */}
-                <div>
+                </div>
+                {/* <div>
                     {
                         showModal &&
                         <div>
@@ -139,7 +135,7 @@ const ContactList = () => {
                         </div>
 
                     }
-                </div>
+                </div> */}
             </section>
         </>
     )
