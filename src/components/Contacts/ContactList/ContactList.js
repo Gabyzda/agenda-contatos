@@ -1,6 +1,6 @@
 import React from 'react';
+import Modal from '../Modal/Modal';
 import { Link } from "react-router-dom";
-// import axios from 'axios';
 import { useState, useEffect } from "react";
 
 const ContactList = () => {
@@ -18,7 +18,7 @@ const ContactList = () => {
         getAllContacts();
     }, []);
 
-    
+
     const handDelete = async () => {
         const response = await fetch('http://localhost:4000/contatos/' + contactTodelete, {
             method: 'DELETE',
@@ -109,33 +109,12 @@ const ContactList = () => {
                 <div>
                     {
                         showModal &&
-                        <div className=''>
-                            <h3>Are you sure you want to delete?</h3>
-                            <button onClick={handDelete}>Confirm</button>
-                            <button onClick={handCancel}>Cancel</button>
-                        </div>
+                        <Modal
+                            handCancel={handCancel}
+                            handDelete={handDelete}
+                        />
                     }
                 </div>
-                {/* <div>
-                    {
-                        showModal &&
-                        <div>
-                            <header closeButton>
-                                <title>Alert!</title>
-                            </header>
-
-                            <body>
-                                <p>Are you sure you want to delete?</p>
-                            </body>
-
-                            <footer>
-                                <button variant="secondary" onClick={handCancel}>Cancel</button>
-                                <button variant="primary" onClick={handDelete}>Confirm</button>
-                            </footer>
-                        </div>
-
-                    }
-                </div> */}
             </section>
         </>
     )

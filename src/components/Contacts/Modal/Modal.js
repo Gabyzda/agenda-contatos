@@ -2,12 +2,7 @@ import React from "react";
 
 const Modal = ({ handCancel, handDelete }) => {
     return (
-        // <div className=''>
-        //                     <h3>Are you sure you want to delete?</h3>
-        //                     <button onClick={handDelete}>Confirm</button>
-        //                     <button onClick={handCancel}>Cancel</button>
-        //                 </div>
-
+      
         <div className="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
             <div className="modal-dialog" role="document">
                 <div className="modal-content">
